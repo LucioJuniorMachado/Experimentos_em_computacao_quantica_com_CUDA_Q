@@ -36,6 +36,8 @@ No início do notebook 'Quantum Walks for Finace Part 1' criei uma operação de
 No notebook 'Quantum Walks for Finance Part 2', defini os kernels para impedir transições entre |0000> e |1111>, como feito no notebook 'Part 1'. O tutorial explora 'quantum qualks' múltiplos, detalhada por Chang et al., para carregar uma distribuição de probabilidade específica em um estado quântico. O foco aqui é a distribuição log-normal, que pode modelar o preço à vista de um ativo financeiro no vencimento. Preparando os dados, comparamos 'quantum walks' com a distribuição alvo. A seguir trabalhamos 'quantum walks' em passos divididos, quando vira à esquerda e quando à direita. No exercício 1 codificamos uma etapa do SSQW usando duas operações de moedas diferentes F1=X e F2=H e não permitindo o movimento do 'walker' entre a posição |0000⟩ e |1111⟩. Então. executei o multi-SSQW e plotei os resultados, como o resultado da medição do estado de Bell. Como desafio  reescrevi o peníultimo código para que agora funcione com um número arbitrário de qubits usando a variável 'num_qubits', e adaptei o código e criar um 'Quantum Walk-Based Adaptive Distribution Generator' que permitiu modelar não apenas dados financeiros, mas também dados 2D, como imagens pixelizadas de dígitos manuscritos.
 
 
+
+
 ### 3. Resultados
 
 No início do notebook 'Quantum Walks for Finace Part 1' criei uma operação de porta quântica para a matriz T e chamei-a de Tgate. Em seguida, construi uma porta X seguida de uma porta T ao primeiro qubit. No segundo qubit conbstrui uma porta Hadamard. Com a uma porta T fiz um qubit de controle 0 e um qubit alvo 1. Visualizei o núcleo quântico usando notação de circuito. Após, criei um kernel quântico que inicializou o estado do 'quantum walker'.
