@@ -39,13 +39,11 @@ No terceiro tutorial, o 'notebook' Portifólio de Otimização, vamos  configura
 
 ### 3. Resultados
 
-No início do notebook 'Quantum Walks for Finace Part 1' criei uma operação de porta quântica para a matriz T e chamei-a de Tgate. Em seguida, construi uma porta X seguida de uma porta T ao primeiro qubit. No segundo qubit conbstrui uma porta Hadamard. Com a uma porta T fiz um qubit de controle 0 e um qubit alvo 1. Visualizei o núcleo quântico usando notação de circuito. Após, criei um kernel quântico que inicializou o estado do 'quantum walker'.
+
 
 ### 4. Conclusões
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar nisl vestibulum tortor fringilla, eget imperdiet neque condimentum. Proin vitae augue in nulla vehicula porttitor sit amet quis sapien. Nam rutrum mollis ligula, et semper justo maximus accumsan. Integer scelerisque egestas arcu, ac laoreet odio aliquet at. Sed sed bibendum dolor. Vestibulum commodo sodales erat, ut placerat nulla vulputate eu. In hac habitasse platea dictumst. Cras interdum bibendum sapien a vehicula.
 
-Proin feugiat nulla sem. Phasellus consequat tellus a ex aliquet, quis convallis turpis blandit. Quisque auctor condimentum justo vitae pulvinar. Donec in dictum purus. Vivamus vitae aliquam ligula, at suscipit ipsum. Quisque in dolor auctor tortor facilisis maximus. Donec dapibus leo sed tincidunt aliquam.
 
 ---
 
