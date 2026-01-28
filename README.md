@@ -121,7 +121,7 @@ No exercício de otimização de portfólio restrito, os mais prováveis portif�
 
 <img width="970" height="662" alt="Captura de tela 2026-01-28 130157" src="https://github.com/user-attachments/assets/e57b996d-30c4-490e-a8ae-9cd1decbe272" />
 
-No exercício 6, através do cíodigo geramos valores aleatórios para ações. Executamos quatro amostras diferentes do estado final com 50, 100, 500 e 1000 iterações e verificamos quantas vezes a portifólio ótimo foi amostrado. 
+No exercício 6, através do código geramos valores aleatórios para ações. Executamos quatro amostras diferentes do estado final com 50, 100, 500 e 1000 iterações e verificamos quantas vezes a portifólio ótimo foi amostrado. 
 
 <img width="601" height="469" alt="Captura de tela 2026-01-28 130623" src="https://github.com/user-attachments/assets/f2df0e27-736f-4da1-af31-046ea69b340d" />
 
