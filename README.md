@@ -39,9 +39,53 @@ No terceiro tutorial, o 'notebook' Portifólio de Otimização, vamos  configura
 
 ### 3. Resultados
 
+No tutorial 1, criamos um kernel que inicializou o 'quantum walk'. 
+
+<img width="786" height="535" alt="Captura de tela 2026-01-28 115822" src="https://github.com/user-attachments/assets/5efef878-259a-4b54-aabc-ee46a3f07e2d" />
+
+Definimos uma operação personalizada em 4 qubits para a matriz unitária INC que
+mapeia |x> para |x+1> mod 16 e verificamos se ela funciona como esperado para |0000>.
+
+<img width="264" height="182" alt="Captura de tela 2026-01-28 120105" src="https://github.com/user-attachments/assets/6489bdd7-a012-48ad-aa78-de7796d3b078" />
+
+No tutorial 2, preparamos os dados e comparamos 'quantum walk' e a distribuição alvo.
+
+<img width="931" height="222" alt="Captura de tela 2026-01-28 120627" src="https://github.com/user-attachments/assets/130411d9-9577-4134-ad44-a22734462bb6" />
+
+No exercício 1, codificamos uma etapa do SSQW abaixo usando duas operações de moeda diferentes,  impedindo o movimento do caminhante entre as posições |0000> e |1111>, caso a moeda seja de |0> se lançando para |1>. 
+
+<img width="645" height="470" alt="Captura de tela 2026-01-28 121021" src="https://github.com/user-attachments/assets/7cdb07c6-0771-438f-a2cf-4f7275059573" />
+
+Testamos o 'quantum walk' kernel e mesuramos o estado de Bell. 
+
+<img width="879" height="486" alt="Captura de tela 2026-01-28 121135" src="https://github.com/user-attachments/assets/7778ca7d-e452-44d5-82f3-33244a0dc681" />
+
+Em cenários reais criamos 'quantum walks' e demostramos uma simples 'quantum walk'. 
+
+<img width="950" height="285" alt="Captura de tela 2026-01-28 121454" src="https://github.com/user-attachments/assets/7b72456f-fa35-4ce5-8445-cc2148708a15" />
+
+<img width="961" height="362" alt="Captura de tela 2026-01-28 121528" src="https://github.com/user-attachments/assets/bf2378d8-e852-40aa-aad2-77752bad1420" />
+
+Comparamos 'quantum walks' com as distribuições alvo e seus erros de distribuições. Listamos os top cinco 'quantum walks'.
+
+<img width="981" height="660" alt="Captura de tela 2026-01-28 122007" src="https://github.com/user-attachments/assets/b30b0cac-83ff-43f4-9f6a-287b15bbe723" />
+
+<img width="1020" height="652" alt="Captura de tela 2026-01-28 122326" src="https://github.com/user-attachments/assets/8b96073c-23a9-418e-8de5-9fb01267564f" />
+
+Modelamos dados em 2D, imagens pixelizadas de dígitos manuscritos.
+
+<img width="1020" height="852" alt="Captura de tela 2026-01-28 122623" src="https://github.com/user-attachments/assets/9850d784-6794-42f8-af09-28b0659eb2d8" />
+
+Aqui o conjunto de distribuição dos 'quantum walks'
+
+<img width="971" height="531" alt="Captura de tela 2026-01-28 122752" src="https://github.com/user-attachments/assets/0fab92c0-e6e7-44a7-b1c5-0d190c594a2e" />
+
+
+
 
 
 ### 4. Conclusões
+
 
 
 
