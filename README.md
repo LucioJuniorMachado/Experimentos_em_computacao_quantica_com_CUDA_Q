@@ -153,7 +153,7 @@ Os resultados da criação do estado de Bell no tutorial segundo foram as probab
   |11⟩: 0.514
   |00⟩: 0.486
 
-Os resultados do 'quantum walk'  foramr: [0.10247399, 0.13724316, 0.19850243, 0.26142815, 0.13545552, 0.0888489 e 0.07604784. Com o erro de otimização em 50 interações de 0.033003. 
+Os resultados do 'quantum walk'  foram: [0.10247399, 0.13724316, 0.19850243, 0.26142815, 0.13545552, 0.0888489 e 0.07604784. Com o erro de otimização em 50 interações de 0.033003. 
 
 O desafio teve como resultado com 2 qubits em 4 estados mostrado no quadro abaixo. E com 3 qubits com 8 estados deu erro. 
 
