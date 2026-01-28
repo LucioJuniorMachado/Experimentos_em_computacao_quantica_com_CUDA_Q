@@ -271,7 +271,7 @@ A execução paralela com múltiplas QPUs proporciona:
 2. Maior taxa de transferência para amostragem em larga escala;
 3. Escalabilidade para instâncias de problemas ainda maiores.
 
-Para 8.000.000 de 'shots':
+Para 8.000.000 'shots':
 
 - Serial: 8,00 segundos;
 - Paralelo (4 QPUs): 2,50 segundos;
