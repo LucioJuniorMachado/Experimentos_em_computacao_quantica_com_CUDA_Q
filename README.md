@@ -191,16 +191,16 @@ deve aparecer entre os melhores resultados. 5) Para n maior (20+ ações), o ris
 
 Os resultados da otimização QAOA para n=15 ações:
 
-Número de camadas QAOA: 3
-Total de parâmetros otimizados: 6
-Iterações de otimização: 54
-Valor esperado final: 0,383403
-Status de sucesso: Verdadeiro
+Número de camadas QAOA: 3;
+Total de parâmetros otimizados: 6;
+Iterações de otimização: 54;
+Valor esperado final: 0,383403;
+Status de sucesso: Verdadeiro.
 
 Resultados da Amostragem (1000 execuções cada):
-Estado inicial - Portfólio ótimo: 128 vezes (12,80%)
-Estado otimizado - Portfólio ótimo: 128 vezes (12,80%)
-✗ O QAOA não melhorou a probabilidade do portfólio ótimo
+Estado inicial - Portfólio ótimo: 128 vezes (12,80%);
+Estado otimizado - Portfólio ótimo: 128 vezes (12,80%);
+✗ O QAOA não melhorou a probabilidade do portfólio ótimo.
 
 Possíveis razões:
 
@@ -223,8 +223,8 @@ RESUMO E CONCLUSÃO
 
 Para n=15 ações (2^15 = 32.768 carteiras possíveis):
 
-Análise de Contagem de 'shots':
-'Shots' Probabilidade Ótima Amplificação Risco de Erro
+Análise de Contagem de 'shots'-
+'Shots' Probabilidade Ótima Amplificação Risco de Erro:
 
 50 22 0,440000 14417,9x 0,000
 100 30 0,300000 9830,4x 0,000
@@ -249,9 +249,9 @@ Principais conclusões:
 para ser identificada com amostragem adequada.
 
 4. Para aplicações práticas com n=15:
-- 500 a 1000 simulações fornecem resultados confiáveis
-- Múltiplas execuções podem reduzir ainda mais o risco
-- Considere o equilíbrio entre o número de simulações e o número de execuções de otimização
+- 500 a 1000 simulações fornecem resultados confiáveis;
+- Múltiplas execuções podem reduzir ainda mais o risco;
+- Considere o equilíbrio entre o número de simulações e o número de execuções de otimização.
 
 RECOMENDAÇÃO FINAL
 
