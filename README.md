@@ -185,7 +185,7 @@ portfólios com qualquer número de ações que não seja exatamente 2. Observa�
 <img width="997" height="761" alt="Captura de tela 2026-01-28 142730" src="https://github.com/user-attachments/assets/4eed5a52-8f9f-4eef-aa1e-01c12f6c004a" />
 
 Para n=15 ações com QAOA concluímos: 1) A carteira ótima tem probabilidade muito baixa sob amostragem uniforme (1 em 32.768 ≈ 0,00003052). 2) O QAOA amplifica significativamente a probabilidade de boas carteiras (tipicamente, amplificação de 100 a 1000 vezes para boas soluções). 3) Com um número moderado de tentativas:- 50 tentativas: alto risco de não encontrar a carteira ótima (>30% de chance);- 100 tentativas: risco moderado (~10-20% de chance);- 500 tentativas: baixo risco (<5% de chance);- 1000 tentativas: risco muito baixo (<1% de chance). 4) Recomendação para n=15: - use pelo menos 500 a 1000 tentativas para uma amostragem confiável; - considere múltiplas execuções independentes; - o portifólio ótimo pode não ser a mais provável, mas
-deve aparecer entre os melhores resultados. 5) Para n maior (20+ ações), o risco aumenta drasticamente e são necessários números de disparos muito maiores ou algoritmos melhores.
+deve aparecer entre os melhores resultados. 5) Para n maior (20+ ações), o risco aumenta drasticamente e são necessários números de 'shots' muito maiores ou algoritmos melhores.
 
 <img width="989" height="634" alt="Captura de tela 2026-01-28 143341" src="https://github.com/user-attachments/assets/220348d6-6cac-4635-91e5-9a03590780a2" />
 
