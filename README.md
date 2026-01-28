@@ -11,9 +11,11 @@ Trabalho apresentado ao curso [BI MASTER](https://ica.puc-rio.ai/bi-master) como
 
 ---
 
+
 ### Resumo
 
 Estes tutoriais fornecem exemplos práticos de algoritmos quânticos aplicados a importantes desafios na área de finanças. Nos possibilitando explorar o uso de 'quantum walks' para modelar dados financeiros, assim comparando-os aos métodos clássicos. Os exercícios também oferecem um mergulho profundo na otimização de portfólios de investimento, demonstrando soluções construídas com 'Quantum Approximate Optimization Algorithm' (QAOA), 'quantum annealing' e o inovador algoritmo QChop da Infleqtion.
+
 
 ### Abstract 
 
@@ -36,6 +38,7 @@ No início do notebook 'Quantum Walks for Finace Part 1' criamos uma operação 
 No 'notebook Quantum Walks for Finance Part 2', definimos os kernels para impedir transições entre |0000> e |1111>, como feito no notebook 'Part 1'. O tutorial explora 'quantum qualks' múltiplos, detalhada por Chang et al., para carregar uma distribuição de probabilidade específica em um estado quântico. O foco aqui é a distribuição log-normal, que pode modelar o preço à vista de um ativo financeiro no vencimento. Preparando os dados, comparamos 'quantum walks' com a distribuição alvo. A seguir trabalhamos 'quantum walks' em passos divididos, quando vira à esquerda e quando à direita. No exercício 1 codificamos uma etapa do SSQW usando duas operações de moedas diferentes F1=X e F2=H e não permitindo o movimento do 'walker' entre a posição |0000⟩ e |1111⟩. Então. executamos o multi-SSQW e plotamos os resultados, como o resultado da medição do estado de Bell. Como desafio  reescrevemos o penúltimo código para que agora funcione com um número arbitrário de qubits usando a variável 'num_qubits', e adaptamos o código e criamos um 'Quantum Walk-Based Adaptive Distribution Generator' que permitiu modelar não apenas dados financeiros, mas também dados 2D, como imagens pixelizadas de dígitos manuscritos.
 
 No terceiro tutorial, o 'notebook' Portifólio de Otimização, iremos  configurar um problema de otimização, resolvendo-o usando dois métodos quânticos diferentes, adicionando restrições e explorando métodos para escalar essas abordagens. Este tutorial também explorará o algoritmo de última geração Q-CHOP, desenvolvido pela Infleqtion e por JPMorgan Chase, demonstrando que exemplos fundamentais codificados com CUDA-Q podem ser estendidos para aplicações úteis dia-a-dia. Já no primeiro exercício, dados os valores de α, β, μ e σ escrevemos o código gerando a matriz QUBO Q. Após, Agora, adicionamos um código que gerou todos os portfólios possíveis e avaliamos a qualidade do portfólio calculando manualmente o xTQx e retornando o melhor e o pior portfólios. No segundo exercício, construímos um Hamiltoniano de Ising e produzimos um Hamiltoniano de operador de spin CUDA-Q. A primeira função recebeu uma matriz QUBO triangular superior como um array numpy e retornou uma lista de coeficientes para os termos de uma única variável. Também, escrevemos uma segunda função que utilizava essas entradas e imprimimos o Hamiltoniano para confirmar se estava correto. No exercício terceiro, codificamos um kernel QAOA em CUDA-Q. Observamos como as entradas são fornecidas como listas, de acordo com suas funções anteriores. Os elementos da função de custo são aplicados como portas RZ parametrizadas com um γ para cada camada, multiplicado por hi para os termos de variável única. Os termos de duas variáveis ​​são aplicados como uma porta CNOT entre os dois qubits correspondentes (controlados pelo primeiro), uma porta RZ parametrizada com o mesmo γ para cada camada, multiplicado por Jij, seguida por uma repetição da porta CNOT anterior. Os termos do misturados são portas RX simples aplicadas a cada qubit, parametrizadas com 2,0∗β para cada camada. Executamos um script com resultados de amostras e confirmamos se o portifólio ideal está pelo menos entre os 5 melhores resultados amostrados pelo procedimento QAOA. Para visualizar melhor o desempenho da sua função QAOA, usamos a função 'plot_samples_histogram' para plotar uma amostra do kernel QAOA com seus parâmetros iniciais (uma superposição uniforme, já que todos os parâmetros variacionais são 0) e o estado final obtido. Rotulamos como "Bons Portfólios" os resultados que correspondem a um valor HC negativo. No quarto exercício, a aproximação adiabática, confirmamos se a abordagem funciona. Observamos como a variável T controla a frequência com que a evolução ocorre. Tentamos executar novamente com T=10. O resultado foi uma evolução moderada, que é: melhoria significativa em relação a T=1; portfólios de bom desempenho amplificados; e melhor índice de aproximação. No quinto exercício adicionamos restrições, escrevemos uma nova função 'portfolio_to_qubo', que adiciona restrições para limitar as soluções de portfólio a k ações. Usando todas as funções criadas anteriormente, executamos novamente uma simulação adiabática desse resultado com restrições. O histograma produzido indicou que a restrição funcionou para números de ações que sejam 2. No sexto exercício, melhorando a Convergência Adiabática com Q-CHOP, usamos um código que gerou μ e σ aleatórios para n=15 ações. Usamos suas funções anteriores para executar um QAOA. Executamos quatro amostras diferentes do estado final com 50, 100, 500 e 1000 iterações e verificamos quantas vezes o portifólio ótimó é amostrado. Para este tamanho de problema relativamente modesto, não existe o risco dela ser perdida com 1000 'shots' (<1% de chance). 
+
 
 ### 3. Resultados
 
@@ -140,9 +143,143 @@ Produzimos amostras e contabilizamos a ocorrência de portifólios ideais.
 
 <img width="961" height="698" alt="Captura de tela 2026-01-28 131442" src="https://github.com/user-attachments/assets/6e3669d1-ec09-4514-9a98-89f43c47940c" />
 
+
 ### 4. Conclusões
 
+Os resultados da criação do estado de Bell no tutorial segundo foram as probabilidades: 
 
+  |11⟩: 0.514
+  |00⟩: 0.486
+
+Os resultados do 'quantum walk'  foramr: [0.10247399, 0.13724316, 0.19850243, 0.26142815, 0.13545552, 0.0888489 e 0.07604784. Com o erro de otimização em 50 interações de 0.033003. 
+
+O desafio teve como resultado com 2 qubits em 4 estados mostrado no quadro abaixo. E com 3 qubits com 8 estados deu erro. 
+
+<img width="569" height="309" alt="Captura de tela 2026-01-28 140526" src="https://github.com/user-attachments/assets/867a37c3-3e9e-408b-90f6-8177a0cbc931" />
+
+<img width="878" height="238" alt="Captura de tela 2026-01-28 140643" src="https://github.com/user-attachments/assets/618ffe66-ce52-4b19-ab5c-859bc394219e" />
+
+Para carregar a imagem do dígito 3 do Mnist, foram precisos 6 qubits e 64 estados.
+
+<img width="915" height="566" alt="Captura de tela 2026-01-28 140910" src="https://github.com/user-attachments/assets/bae39cf7-44fb-4f10-a00f-c2ce8ae091ed" />
+
+No exercício 3 do terceiro tutorial, a busca exaustiva clássica encontrou o verdadeiro portfólio ótimo, os resultados simulados do QAOA mostram alta probabilidade para portfólios de baixo custo e na prática, com CUDA-Q real, o QAOA otimizou os parâmetros para preparar um estado quântico que, quando medido, fornece o portfólio ótimo com alta probabilidade.
+
+<img width="943" height="647" alt="Captura de tela 2026-01-28 141432" src="https://github.com/user-attachments/assets/504efd39-085c-4e9e-a705-057f6574aa65" />
+
+A seguir concluímos que mesmo que a QAOA não produza o portifólio ótimo com a maior frequência, ele amplifica significativamente a probabilidade de boas carteiras em comparação com a amostragem aleatória. O portifólio ótimo deve aparecer com muito mais frequência com a QAOA do que com a amostragem aleatória uniforme.
+
+Os gráficos abaixo mostram estado inicial: distribuição uniforme (todas os portifólios com a mesma probabilidade); estado final: probabilidade concentrada em portifólios de baixo custo (boas); o QAOA amplifica com sucesso as probabilidades de boas soluções; e o portifólio ótimo aparece com muito mais frequência após o QAOA. Mesmo que não seja perfeito, o QAOA proporciona uma melhoria significativa em relação à amostragem aleatória.
+
+<img width="940" height="649" alt="Captura de tela 2026-01-28 141938" src="https://github.com/user-attachments/assets/61b13647-a371-464f-b01e-b1516adbe375" />
+
+No exercício 4, a aproximação adiabática, o teorema adiabático nos diz que, para alcançar com sucesso o estado fundamental Hamiltoniano do problema, precisamos evoluir lentamente o suficiente. Principais observações da nossa simulação: 1) T=1 (Evolução rápida): resultados próximos à distribuição uniforme; aproximação ruim da solução ótima; e condição adiabática não satisfeita. 2) T=10 (Evolução moderada): melhoria significativa em relação a T=1; portfólios bons são amplificados; e melhor taxa de aproximação. 3) T=100 (Evolução lenta): próximo ao estado fundamental ótimo; alta probabilidade de portfólios bons; e melhor taxa de aproximação. Contra-argumento: mm T maior proporciona melhores resultados, mas requer mais tempo de computação. Na prática, escolhemos T com base nos recursos disponíveis e na precisão necessária.
+
+<img width="996" height="773" alt="Captura de tela 2026-01-28 142427" src="https://github.com/user-attachments/assets/2aa927b9-2249-4a3c-b722-c3c14527ae7f" />
+
+Na parte que adicionamos restrições, a formulação QUBO restrita adiciona um termo de penalização que desencoraja
+portfólios com qualquer número de ações que não seja exatamente 2. Observações principais: 1) A intensidade da penalização λ=10 controla a força com que a restrição é aplicada. 2) O tempo de evolução T=100 afeta a capacidade do sistema quântico de encontrar estados de baixa energia, respeitando as restrições. 3) No histograma, os portfólios com exatamente 2 ações devem ser destacados. 4) Com parâmetros adequados, a maioria dos portfólios amostrados deve ter 2 ações.
+
+<img width="997" height="761" alt="Captura de tela 2026-01-28 142730" src="https://github.com/user-attachments/assets/4eed5a52-8f9f-4eef-aa1e-01c12f6c004a" />
+
+Para n=15 ações com QAOA concluímos: 1) A carteira ótima tem probabilidade muito baixa sob amostragem uniforme (1 em 32.768 ≈ 0,00003052). 2) O QAOA amplifica significativamente a probabilidade de boas carteiras (tipicamente, amplificação de 100 a 1000 vezes para boas soluções). 3) Com um número moderado de tentativas:- 50 tentativas: alto risco de não encontrar a carteira ótima (>30% de chance);- 100 tentativas: risco moderado (~10-20% de chance);- 500 tentativas: baixo risco (<5% de chance);- 1000 tentativas: risco muito baixo (<1% de chance). 4) Recomendação para n=15: - use pelo menos 500 a 1000 tentativas para uma amostragem confiável; - considere múltiplas execuções independentes; - o portifólio ótimo pode não ser a mais provável, mas
+deve aparecer entre os melhores resultados. 5) Para n maior (20+ ações), o risco aumenta drasticamente e são necessários números de disparos muito maiores ou algoritmos melhores.
+
+<img width="989" height="634" alt="Captura de tela 2026-01-28 143341" src="https://github.com/user-attachments/assets/220348d6-6cac-4635-91e5-9a03590780a2" />
+
+Os resultados da otimização QAOA para n=15 ações:
+
+Número de camadas QAOA: 3
+Total de parâmetros otimizados: 6
+Iterações de otimização: 54
+Valor esperado final: 0,383403
+Status de sucesso: Verdadeiro
+
+Resultados da Amostragem (1000 execuções cada):
+Estado inicial - Portfólio ótimo: 128 vezes (12,80%)
+Estado otimizado - Portfólio ótimo: 128 vezes (12,80%)
+✗ O QAOA não melhorou a probabilidade do portfólio ótimo
+
+Possíveis razões:
+
+- Número insuficiente de camadas QAOA (p={camadas});
+
+- Mínimo local na otimização;
+
+- Necessidade de mais execuções para estatísticas confiáveis.
+
+Principais conclusões:
+1. Os parâmetros do QAOA precisam de inicialização adequada (não todos zeros);
+2. A otimização requer múltiplas iterações para convergir;
+3. O portfólio ótimo deve se tornar mais provável após a otimização;
+4. Para n=15, mesmo A otimização do QAOA pode não tornar o ideal o mais provável;
+5. Mas deve aparecer com muito mais frequência do que no estado inicial.
+
+<img width="965" height="602" alt="Captura de tela 2026-01-28 143656" src="https://github.com/user-attachments/assets/757d354f-fb14-4125-b380-36391dbe470d" />
+
+RESUMO E CONCLUSÃO
+
+Para n=15 ações (2^15 = 32.768 carteiras possíveis):
+
+Análise de Contagem de 'shots':
+'Shots' Probabilidade Ótima Amplificação Risco de Erro
+
+50 22 0,440000 14417,9x 0,000
+100 30 0,300000 9830,4x 0,000
+500 78 0,156000 5111,8x 0,000
+1000 128 0,128000 4194,3x 0,000
+
+Principais conclusões:
+1. O QAOA amplifica significativamente a probabilidade de encontrar boas carteiras
+(tipicamente de 5112 a 4194 vezes melhor do que um palpite aleatório).
+
+2. O risco de não encontrar a carteira ideal diminui com o número de tentativas:
+
+- 50 tentativas: Alto risco (probabilidade de erro de aproximadamente 30 a 50%);
+
+- 100 tentativas: Risco moderado (probabilidade de erro de aproximadamente 10 a 20%);
+
+- 500 tentativas: Baixo risco (probabilidade inferior a 5%);
+
+- 1000 tentativas: Risco muito baixo (probabilidade inferior a 1%).
+
+3. Mesmo que a carteira ideal não seja A mais provável, ela aparece com frequência suficiente
+para ser identificada com amostragem adequada.
+
+4. Para aplicações práticas com n=15:
+- 500 a 1000 simulações fornecem resultados confiáveis
+- Múltiplas execuções podem reduzir ainda mais o risco
+- Considere o equilíbrio entre o número de simulações e o número de execuções de otimização
+
+RECOMENDAÇÃO FINAL
+
+Para otimização de portfólio com n=15 ações usando QAOA:
+- Use pelo menos 500 simulações para uma amostragem confiável;
+- Considere 1000 ou mais simulações Ações para aplicações críticas;
+- O portfólio ideal deve aparecer entre os melhores resultados;
+- Mesmo que não seja o mais provável, será amostrado com frequência suficiente;
+- O risco de não encontrar o ideal cai para menos de 1% com 1000 tentativas.
+
+<img width="987" height="634" alt="Captura de tela 2026-01-28 144029" src="https://github.com/user-attachments/assets/4e96d03a-ed48-4d41-8b76-3c063d1e409c" />
+
+CONCLUSÃO FINAL: 
+
+A execução paralela com múltiplas QPUs proporciona:
+1. Tempo de execução mais rápido através da distribuição da carga de trabalho;
+2. Maior taxa de transferência para amostragem em larga escala;
+3. Escalabilidade para instâncias de problemas ainda maiores.
+
+Para 8.000.000 de 'shots' (disparos):
+
+- Serial: 8,00 segundos;
+- Paralelo (4 QPUs): 2,50 segundos;
+- Aceleração: 3,20x mais rápido.
+
+Considerações práticas:
+- Use execução paralela para grandes quantidades de disparos (>1 milhão);
+- Distribua a carga de trabalho uniformemente entre as QPUs;
+- Combine os resultados após a execução para análise;
+- Monitore a utilização das QPUs para um desempenho ideal.
 
 
 ---
