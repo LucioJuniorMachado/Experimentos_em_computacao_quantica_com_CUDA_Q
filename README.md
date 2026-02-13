@@ -21,7 +21,7 @@ Estes tutoriais fornecem exemplos práticos de algoritmos quânticos aplicados a
 
 ### Abstract 
 
-These tutorials provide practical examples of quantum algorithms applied to important challenges in the field of finance. They allow us to explore the use of 'quantum walks' to model financial data, comparing them to classical methods. The exercises also offer a deep dive into investment portfolio optimization, demonstrating solutions built with Quantum Approximate Optimization Algorithm (QAOA), quantum annealing, and and the novel QChop algorithm from Infleqtion.
+These tutorials provide practical examples of quantum algorithms applied to important challenges in the field of finance. They allow us to explore the use of quantum walks to model financial data, comparing them to classical methods. The exercises also offer a deep dive into investment portfolio optimization, demonstrating solutions built with Quantum Approximate Optimization Algorithm (QAOA), quantum annealing, and and the novel QChop algorithm from Infleqtion.
 
 
 ### 1. Introdução
